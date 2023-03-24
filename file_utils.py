@@ -16,11 +16,11 @@ def seleccionar_carpeta(var):
         var.set(folder_path)
     return inner
 
-def filtrar_secuencias(input_file, output_folder, filter_option):
+def filtrar_secuencias(input_file, output_folder, filter_option, gap1=None, gap2=None):
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     output_file = os.path.join(output_folder, f"filtrado_{timestamp}.fasta")
 
-    filter_func = filters.get_filter_function(filter_option)
+    filter_func = filters.get_filter_function(filter_option, gap1, gap2)
 
     with open(input_file, "r") as in_handle, open(output_file, "w") as out_handle:
         records = SeqIO.parse(in_handle, "fasta")
