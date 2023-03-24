@@ -18,7 +18,14 @@ def seleccionar_carpeta(var):
 
 def filtrar_secuencias(input_file, output_folder, filter_option, gap1=None, gap2=None):
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    output_file = os.path.join(output_folder, f"filtrado_{timestamp}.fasta")
+    input_filename = os.path.splitext(os.path.basename(input_file))[0]
+
+    if filter_option == "patron_alfa":
+        filter_name = f"{filter_option}_{gap1}_{gap2}"
+    else:
+        filter_name = filter_option
+
+    output_file = os.path.join(output_folder, f"{input_filename}_{filter_name}_{timestamp}.fasta")
 
     filter_func = filters.get_filter_function(filter_option, gap1, gap2)
 
