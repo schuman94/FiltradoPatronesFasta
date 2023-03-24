@@ -34,6 +34,8 @@ tk.Button(ventana, text="Seleccionar", command=file_utils.seleccionar_carpeta(sa
 tk.Label(ventana, text="Patrón de filtrado:").grid(row=2, column=0, sticky="e")
 tk.OptionMenu(ventana, patron_var, "cuatro_cisteinas").grid(row=2, column=1, sticky="w")
 patron_var.set("cuatro_cisteinas")
+tk.OptionMenu(ventana, patron_var, "cuatro_cisteinas", "patron_CCXXXXCXXXXC").grid(row=2, column=1, sticky="w")
+patron_var.set("cuatro_cisteinas")
 
 tk.Button(ventana, text="Iniciar filtrado", command=filtrar_secuencias).grid(row=3, column=1, pady=10)
 
