@@ -2,10 +2,9 @@
 
 Este programa permite filtrar secuencias en formato FASTA según diferentes criterios:
 
-- Patrón "4C": se filtran todas las secuencias que contengan la secuencia "CCCC".
-- Patrón "Patrón alfa": se filtran todas las secuencias que cumplan con el patrón alfa, que consiste en la presencia de dos cisteínas separadas por un número variable de aminoácidos.
+- Patrón "4C": se filtran todas las secuencias que contengan solo cuatro cisteinas.
+- Patrón "Patrón alfa": se filtran todas las secuencias que cumplan con el patrón alfa, pudiendo indicar el numero de aminoacidos en cada uno de los dos gaps.
 
-El usuario puede indicar el número de espacios entre las dos cisteínas mediante dos cuadros de texto.
 
 ## Requisitos
 
@@ -26,7 +25,7 @@ El programa requiere la instalación de Python 3 y las siguientes librerías:
 El programa consta de los siguientes archivos:
 - `main.py`: archivo principal que contiene la interfaz gráfica y llama a las funciones necesarias.
 - `file_utils.py`: archivo que contiene las funciones para seleccionar archivos y carpetas, así como la función para filtrar las secuencias.
-- `filters.py`: archivo que contiene las funciones de filtrado según el patrón alfa.
+- `filters.py`: archivo que contiene las funciones de filtrado.
 
 ## Compilación
 
