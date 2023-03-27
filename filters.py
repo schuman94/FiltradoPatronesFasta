@@ -1,9 +1,9 @@
 import re
 
 def get_filter_function(filter_option, gap1=None, gap2=None):
-    if filter_option == "cuatro_cisteinas":
+    if filter_option == "4C":
         return filter_four_cysteines
-    elif filter_option == "patron_alfa":
+    elif filter_option == "Patron alfa":
         return filter_pattern_alfa(gap1, gap2)
     else:
         raise ValueError(f"Opción de filtro desconocida: {filter_option}")

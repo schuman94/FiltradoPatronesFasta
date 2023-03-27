@@ -27,7 +27,7 @@ def filtrar_secuencias():
 
 ventana = tk.Tk()
 ventana.title("Filtrado de secuencias FASTA")
-ventana.minsize(600, 200)
+ventana.minsize(600, 140)
 
 entrada_var = tk.StringVar()
 salida_var = tk.StringVar()
@@ -44,10 +44,10 @@ tk.Entry(ventana, textvariable=salida_var, width=60).grid(row=1, column=1)
 tk.Button(ventana, text="Seleccionar", command=file_utils.seleccionar_carpeta(salida_var)).grid(row=1, column=2)
 
 tk.Label(ventana, text="Patrón de filtrado:").grid(row=2, column=0, sticky="e")
-patron_var.set("cuatro_cisteinas")
+patron_var.set("4C")
 
 def update_patron_menu(*args):
-    if patron_var.get() == "patron_alfa":
+    if patron_var.get() == "Patron alfa":
         gap1_entry.grid(row=3, column=0)
         gap2_entry.grid(row=3, column=1)
     else:
@@ -56,7 +56,7 @@ def update_patron_menu(*args):
 
 patron_var.trace("w", update_patron_menu)
 
-tk.OptionMenu(ventana, patron_var, "cuatro_cisteinas", "patron_alfa").grid(row=2, column=1, sticky="w")
+tk.OptionMenu(ventana, patron_var, "4C", "Patron alfa").grid(row=2, column=1, sticky="w")
 gap1_entry = tk.Entry(ventana, textvariable=gap1_var, width=10)
 gap2_entry = tk.Entry(ventana, textvariable=gap2_var, width=10)
 
